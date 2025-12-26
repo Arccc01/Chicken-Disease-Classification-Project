@@ -1,0 +1,8 @@
+artifacts_root: artifacts_root
+
+data_ingestion:
+    root_dir: artifacts_root/data_ingestion
+    source_URL: "https://github.com/Arccc01/Useful-datasets/raw/refs/heads/main/chicken%20fecal%20images.zip"
+    local_data_file: artifacts/data_ingestion/data.zip
+    unzip_dir: artifacts/data_ingestion
+  
