@@ -21,7 +21,18 @@ try:
     prepare_base_model = PrepareBaseModelTrainingPipeline()
     prepare_base_model.main()
     logger.info(f">>>>>> Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
 
+STAGE_NAME = "Training Stage"
+try:
+    logger.info(f">>>>>> Stage {STAGE_NAME} started <<<<<<")
+    from cnnClassifier.pipeline.stage_03_training import TrainingPipeline
+
+    training_pipeline = TrainingPipeline()
+    training_pipeline.main()
+    logger.info(f">>>>>> Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
     logger.exception(e)
     raise e
